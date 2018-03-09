@@ -13,11 +13,14 @@
     <sprite>sprites\spr_Cowboy_WalkLeft</sprite>
     <sprite>sprites\spr_Cowboy_Fall1</sprite>
     <sprite>sprites\spr_Cowboy_Jump1</sprite>
+    <sprite>sprites\sp_DritTile</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_GrassTile</object>
+    <object>objects\obj_DirtTile</object>
     <object>objects\obj_Cowboy</object>
   </objects>
   <rooms name="rooms">

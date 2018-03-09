@@ -77,7 +77,7 @@ if (move = 0) {
     }
 if ((key_shift = 0) &amp;&amp; (movespeed &gt; 5)) {
      movespeed -= (acc*1.2);
-     image_speed -=acc;
+     image_speed -= (acc*1.2);
      }
 if (vsp &lt; 10) vsp += grav;
 

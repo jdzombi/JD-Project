@@ -26,11 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Variables
+acc = 0.02;
 grav = 0.8;
 hsp = 0;
 vsp = 0;
 jumpspeed = 16;
 movespeed = 5;
+MAX_SPEED = 15;
 
 sprite_index = spr_Cowboy
 </string>
@@ -59,10 +61,17 @@ sprite_index = spr_Cowboy
 key_right = keyboard_check(ord("D"));
 key_left = -keyboard_check(ord("A"));
 key_jump = keyboard_check_pressed(vk_space);
+key_shift = keyboard_check(vk_shift)
 
 //React to Input
 move = key_left + key_right;
 hsp = move * movespeed;
+if ((key_shift = 1) &amp;&amp; ((key_right = 1) &amp;&amp; (hsp &lt; MAX_SPEED)) || ((key_left = 1) &amp;&amp; (hsp &gt; - MAX_SPEED))) { 
+     movespeed += acc;
+     }
+if ((key_shift = 0) &amp;&amp; (movespeed &gt; 5)) {
+     movespeed -= acc;
+     }
 if (vsp &lt; 10) vsp += grav;
 
 if (place_meeting (x,y+1, obj_GrassTile))

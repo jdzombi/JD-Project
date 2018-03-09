@@ -162,7 +162,7 @@
     <instance objName="obj_GrassTile" x="0" y="5632" name="inst_B789C236" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_GrassTile" x="256" y="5376" name="inst_7EBE5A96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_GrassTile" x="192" y="5312" name="inst_D18BBAE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Cowboy" x="192" y="5568" name="inst_124855CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Cowboy" x="192" y="5504" name="inst_124855CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_GrassTile" x="448" y="5440" name="inst_E17BC072" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_GrassTile" x="512" y="5440" name="inst_016D9FEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_GrassTile" x="576" y="5440" name="inst_0B6EBFBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

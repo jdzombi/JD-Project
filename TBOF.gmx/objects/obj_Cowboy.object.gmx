@@ -110,17 +110,6 @@ if (place_meeting(x,y+vsp,obj_GrassTile))
 
 y+= vsp;
 
-//Diagonal Collision
-if(place_meeting(x+hsp, y+vsp, obj_GrassTile))
-{
-    while(!place_meeting(x+sign(hsp), y + sign(vsp), obj_GrassTile))
-    {
-        x+= sign(hsp);
-        y+= sign(vsp);
-    }
-    vsp = 0;
-}
-
 
 //Animate
 if (move!=0) image_xscale = move;

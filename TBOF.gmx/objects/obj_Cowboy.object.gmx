@@ -26,13 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Variables
-acc = 0.08;
+acc = 0.16;
 grav = 0.8;
 hsp = 0;
 vsp = 0;
 jumpspeed = 16;
 movespeed = 5;
-MAX_SPEED = 15;
+MAX_SPEED = 10;
 
 sprite_index = spr_Cowboy
 </string>
@@ -97,6 +97,7 @@ if (place_meeting(x+hsp,y,obj_GrassTile))
 }
 x+= hsp;
 
+
 //Vertical Collsion
 if (place_meeting(x,y+vsp,obj_GrassTile))
 {
@@ -117,13 +118,12 @@ if(place_meeting(x+hsp, y+vsp, obj_GrassTile))
         x+= sign(hsp);
         y+= sign(vsp);
     }
-    hsp = 0;
     vsp = 0;
 }
 
 
 //Animate
-
+if (move!=0) image_xscale = move;
 if (!place_meeting(x,y+1,obj_GrassTile))
 {
     if (vsp &lt; 0) sprite_index = spr_Cowboy_Jump1; else sprite_index = spr_Cowboy_Fall1; // sprite_index = spr_CowboyJump; else sprite_index = spr_CowboyFall;
@@ -137,10 +137,10 @@ else
    }
    else
    {
-       if (hsp &gt; 0) sprite_index = spr_Cowboy_WalkRight
+       if (hsp!= 0) sprite_index = spr_Cowboy_WalkRight
        else
        {
-            if (hsp &lt; 0) sprite_index = spr_Cowboy_WalkLeft 
+            sprite_index = spr_Cowboy 
        }
   }
 }

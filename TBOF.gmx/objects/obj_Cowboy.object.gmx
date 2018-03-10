@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Initialize Variables
 acc = 0.16;
-grav = 1.2;
+grav = 1.0;
 hsp = 0;
 vsp = 0;
 jumpspeed = 16;

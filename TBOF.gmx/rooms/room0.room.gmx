@@ -683,6 +683,27 @@
     <instance objName="obj_GrassTile" x="4032" y="5632" name="inst_B319CD13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_GrassTile" x="2816" y="5632" name="inst_430F2439" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_GrassTile" x="1792" y="5632" name="inst_A5E658FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="5568" y="5440" name="inst_4223FF15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="5632" y="5440" name="inst_F3AA00B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="5696" y="5440" name="inst_29343E58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="5760" y="5440" name="inst_7DA183B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="5824" y="5440" name="inst_29F472C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="5824" y="5440" name="inst_C5DDB9BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="5952" y="5440" name="inst_B617919F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="5888" y="5440" name="inst_967B350C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="6016" y="5376" name="inst_D29402DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="6336" y="5312" name="inst_92E4C63B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="6528" y="5312" name="inst_145C6FC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_DirtTile" x="6016" y="5440" name="inst_5F9F0AB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="6720" y="5248" name="inst_FB9AACAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="5440" y="5504" name="inst_9A2B90E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="6400" y="5312" name="inst_A2A77333" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="6080" y="5376" name="inst_6D5A19F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="6464" y="5312" name="inst_BAE6D5B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="6784" y="5248" name="inst_6E99AD19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="7040" y="5248" name="inst_E43A0C55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="7104" y="5248" name="inst_EFDF0F3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_GrassTile" x="7168" y="5248" name="inst_416DACB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

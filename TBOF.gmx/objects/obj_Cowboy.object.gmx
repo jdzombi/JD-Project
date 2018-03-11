@@ -61,6 +61,7 @@ sprite_index = spr_Cowboy
 key_right = keyboard_check(ord("D"));
 key_left = -keyboard_check(ord("A"));
 key_jump = keyboard_check_pressed(vk_space);
+key_jump_held = keyboard_check(vk_space);
 key_shift = keyboard_check(vk_shift)
 
 //React to Input
@@ -85,6 +86,7 @@ if (place_meeting (x,y+1, obj_GrassTile))
 {
     vsp = key_jump * -jumpspeed
 }
+if vsp&lt;0 &amp;&amp; (!key_jump_held) vsp = max(vsp,-jumpspeed/2)
 
 //Horizontal Collsion
 if (place_meeting(x+hsp,y,obj_GrassTile))

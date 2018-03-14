@@ -12,6 +12,7 @@
     <sprite>sprites\spr_Cowboy_Fall1</sprite>
     <sprite>sprites\spr_Cowboy_Jump1</sprite>
     <sprite>sprites\sp_DritTile</sprite>
+    <sprite>sprites\spr_Slime</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

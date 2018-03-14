@@ -63,9 +63,6 @@ if (time_count == 20)
 {
     movespeed = 0;
 }
-if (time_count == 120)
-{
-    //Direction
     image_xscale = sign(dir)
     if ((obj_Cowboy.x) &gt; (obj_Slime.x))
     {
@@ -75,6 +72,9 @@ if (time_count == 120)
     {
     dir = -1;
     }
+if (time_count == 120)
+{
+    //Direction
     //Action
     vsp = -jumpspeed;
     movespeed = 2;

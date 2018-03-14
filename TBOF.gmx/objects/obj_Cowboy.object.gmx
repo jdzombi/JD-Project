@@ -115,7 +115,7 @@ if no_hit=1 {
           <argument>
             <kind>1</kind>
             <string>no_hit = 0
-image_alpha=1.0
+image_alpha = 1.0
 </string>
           </argument>
         </arguments>

@@ -13,6 +13,7 @@
     <sprite>sprites\spr_Cowboy_Jump1</sprite>
     <sprite>sprites\sp_DritTile</sprite>
     <sprite>sprites\spr_Slime</sprite>
+    <sprite>sprites\spr_SlimeGround</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

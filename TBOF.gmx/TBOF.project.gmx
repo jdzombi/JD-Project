@@ -20,6 +20,7 @@
     <object>objects\obj_GrassTile</object>
     <object>objects\obj_DirtTile</object>
     <object>objects\obj_Cowboy</object>
+    <object>objects\obj_Slime</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

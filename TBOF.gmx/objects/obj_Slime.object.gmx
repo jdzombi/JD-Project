@@ -28,10 +28,12 @@
             <string>//Initialize Variables
 
 dir = -1;
-movespeed = 3;
+movespeed = 0;
 grav = 1.0;
 hsp = 0;
 vsp = 0;
+jumpspeed = 10;
+time_count = 0;
 </string>
           </argument>
         </arguments>
@@ -57,6 +59,29 @@ vsp = 0;
             <string>//Movement
 hsp = dir * movespeed;
 if (vsp &lt; 10) vsp += grav;
+if (time_count == 20)
+{
+    movespeed = 0;
+}
+if (time_count == 120)
+{
+    //Direction
+    if ((obj_Cowboy.x) &gt; (obj_Slime.x))
+    {
+    dir = 1;
+    }
+    else
+    {
+    dir = -1;
+    }
+    //Action
+    vsp = -jumpspeed;
+    movespeed = 2;
+    time_count = 0;
+}
+else
+    time_count++;
+
 //Horizontal Collision
 if (place_meeting(x+hsp,y,obj_GrassTile))
 {
@@ -84,6 +109,7 @@ if (place_meeting(x,y+vsp,obj_GrassTile))
     } 
 }
 y+= vsp;
+
 </string>
           </argument>
         </arguments>

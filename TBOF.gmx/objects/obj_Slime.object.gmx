@@ -74,7 +74,6 @@ if (time_count == 20)
     }
 if (time_count == 120)
 {
-    //Direction
     //Action
     vsp = -jumpspeed;
     movespeed = 2;

@@ -63,7 +63,9 @@ if (time_count == 20)
 {
     movespeed = 0;
 }
+    if hsp=0 {
     image_xscale = sign(dir)
+    }
     if ((obj_Cowboy.x) &gt; (obj_Slime.x))
     {
     dir = 1;

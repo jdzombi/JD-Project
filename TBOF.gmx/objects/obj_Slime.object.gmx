@@ -66,6 +66,7 @@ if (time_count == 20)
 if (time_count == 120)
 {
     //Direction
+    image_xscale = sign(dir)
     if ((obj_Cowboy.x) &gt; (obj_Slime.x))
     {
     dir = 1;

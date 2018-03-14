@@ -135,6 +135,11 @@ else
        }
   }
 }
+//Enemy Collision
+    if (place_meeting(x,y+1,obj_Slime)){
+        y += vsp + -8;
+        x += hsp + sign(x-obj_Cowboy.x)*2;
+    }
 </string>
           </argument>
         </arguments>

@@ -35,6 +35,7 @@ movespeed = 5;
 MAX_SPEED = 10;
 no_hit = 0;
 
+
 sprite_index = spr_Cowboy
 </string>
           </argument>
@@ -147,6 +148,7 @@ key_shift = keyboard_check(vk_shift)
 //React to Input
 move = key_left + key_right;
 hsp = move * movespeed;
+dir = sign(hsp);
 if(alarm[2]&lt;0){
   // go a head and move
 if ((key_shift = 1) &amp;&amp; ((key_right = 1) &amp;&amp; (hsp &lt; MAX_SPEED)) || ((key_left = -1) &amp;&amp; (hsp &gt; - MAX_SPEED))) { 
@@ -221,8 +223,9 @@ else
   }
 }
 //Enemy Collision
-if (no_hit = 0) 
-    {
+
+if (no_hit = 0)       
+        {
     if (place_meeting(x,y+1,obj_Slime)){
         if(alarm[2]&lt;0){
         y += vsp + -jumpspeed;

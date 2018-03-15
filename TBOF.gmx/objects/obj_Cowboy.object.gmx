@@ -227,7 +227,7 @@ if (no_hit = 0)
         if(alarm[2]&lt;0){
         y += vsp + -jumpspeed;
   hsp= -(sign(hsp)*movespeed);
-  vspeed=movespeed*median(-1,1,other.y-y);
+  vsp= movespeed*median(-1,1,other.y-y);
   alarm[2]=room_speed*1;
   no_hit = 1;
   alarm[0] = 60

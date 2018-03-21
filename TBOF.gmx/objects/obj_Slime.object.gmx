@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Initialize Variables
+jumped = 0;
 dir = -1;
 movespeed = 0;
 grav = 1.0;
@@ -33,6 +34,7 @@ hsp = 0;
 vsp = 0;
 jumpspeed = 10;
 time_count = 0;
+inst = 100649;
 
 sprite_index = spr_SlimeGround
 
@@ -64,7 +66,6 @@ hsp = dir * movespeed;
 if (vsp &lt; 10) vsp += grav;
 if ((time_count == 20) &amp;&amp; (jumped = 1))
 {
-    with (inst){
     movespeed = 0;
     if hsp=0 {
     image_xscale = sign(dir)
@@ -77,7 +78,6 @@ if ((time_count == 20) &amp;&amp; (jumped = 1))
     {
     dir = -1;
     }
-    }
     jumped = 0;
 }
 if (time_count == 120)
@@ -89,6 +89,7 @@ if (time_count == 120)
     time_count = 0;
     jumped = 1;
     }
+    inst += 1;
     
 }
 else {

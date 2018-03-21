@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>//Initialize Variables
-
 dir = -1;
 movespeed = 0;
 grav = 1.0;
@@ -63,10 +62,10 @@ image_speed = .1
             <string>//Movement
 hsp = dir * movespeed;
 if (vsp &lt; 10) vsp += grav;
-if (time_count == 20)
+if ((time_count == 20) &amp;&amp; (jumped = 1))
 {
+    with (inst){
     movespeed = 0;
-}
     if hsp=0 {
     image_xscale = sign(dir)
     }
@@ -78,16 +77,23 @@ if (time_count == 20)
     {
     dir = -1;
     }
+    }
+    jumped = 0;
+}
 if (time_count == 120)
 {
     //Action
+    with (inst){
     vsp = -jumpspeed;
     movespeed = 2;
     time_count = 0;
+    jumped = 1;
+    }
+    
 }
-else
+else {
     time_count++;
-
+    }
 //Horizontal Collision
 if (place_meeting(x+hsp,y,obj_GrassTile))
 {
@@ -124,6 +130,29 @@ y+= vsp;
  
  if hsp=0{
     sprite_index= spr_SlimeGround}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="88">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>show_message("ID = " + string(id))
 </string>
           </argument>
         </arguments>

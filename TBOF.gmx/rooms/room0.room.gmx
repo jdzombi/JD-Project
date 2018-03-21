@@ -705,6 +705,7 @@
     <instance objName="obj_GrassTile" x="7104" y="5248" name="inst_EFDF0F3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_GrassTile" x="7168" y="5248" name="inst_416DACB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Slime" x="640" y="5568" name="inst_84A4275F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Slime" x="704" y="5504" name="inst_C214CA91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

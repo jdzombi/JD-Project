@@ -33,8 +33,10 @@ grav = 1.0;
 hsp = 0;
 vsp = 0;
 jumpspeed = 10;
-time_count = 0;
-inst = 100649;
+time_count = irandom(29);
+max_timer = irandom_range(60, 180);
+
+image_blend = make_colour_hsv(irandom(255), irandom(255), irandom(255));
 
 sprite_index = spr_SlimeGround
 
@@ -70,7 +72,11 @@ if ((time_count == 20) &amp;&amp; (jumped = 1))
     if hsp=0 {
     image_xscale = sign(dir)
     }
-    if ((obj_Cowboy.x) &gt; (x))
+    jumped = 0;
+   }
+   if (time_count &gt;= (max_timer-15))
+   {
+   if ((obj_Cowboy.x) &gt; (x))
     {
     dir = 1;
     }
@@ -78,12 +84,11 @@ if ((time_count == 20) &amp;&amp; (jumped = 1))
     {
     dir = -1;
     }
-    jumped = 0;
-}
-if (time_count == 120)
+   }
+if (time_count &gt;= max_timer)
 {
     //Action
-    
+    max_timer = irandom_range(60,180)
     vsp = -jumpspeed;
     movespeed = 2;
     time_count = 0;

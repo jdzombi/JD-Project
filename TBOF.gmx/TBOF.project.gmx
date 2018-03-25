@@ -16,6 +16,7 @@
     <sprite>sprites\spr_SlimeGround</sprite>
     <sprite>sprites\spr_SlimeJump</sprite>
     <sprite>sprites\spr_SlimeFall</sprite>
+    <sprite>sprites\spr_Sign</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -24,6 +25,7 @@
     <object>objects\obj_DirtTile</object>
     <object>objects\obj_Cowboy</object>
     <object>objects\obj_Slime</object>
+    <object>objects\obj_Sign</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

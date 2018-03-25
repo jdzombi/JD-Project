@@ -14,6 +14,8 @@
     <sprite>sprites\sp_DritTile</sprite>
     <sprite>sprites\spr_Slime</sprite>
     <sprite>sprites\spr_SlimeGround</sprite>
+    <sprite>sprites\spr_SlimeJump</sprite>
+    <sprite>sprites\spr_SlimeFall</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

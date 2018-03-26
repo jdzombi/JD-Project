@@ -7,10 +7,10 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sp_GrassTile</sprite>
-    <sprite>sprites\spr_Cowboy</sprite>
-    <sprite>sprites\spr_Cowboy_WalkRight</sprite>
-    <sprite>sprites\spr_Cowboy_Fall1</sprite>
-    <sprite>sprites\spr_Cowboy_Jump1</sprite>
+    <sprite>sprites\spr_Player</sprite>
+    <sprite>sprites\spr_Player_WalkRight</sprite>
+    <sprite>sprites\spr_Player_Fall</sprite>
+    <sprite>sprites\spr_Player_Jump</sprite>
     <sprite>sprites\sp_DritTile</sprite>
     <sprite>sprites\spr_Slime</sprite>
     <sprite>sprites\spr_SlimeGround</sprite>
@@ -23,7 +23,7 @@
   <objects name="objects">
     <object>objects\obj_GrassTile</object>
     <object>objects\obj_DirtTile</object>
-    <object>objects\obj_Cowboy</object>
+    <object>objects\obj_Player</object>
     <object>objects\obj_Slime</object>
     <object>objects\obj_Sign</object>
   </objects>

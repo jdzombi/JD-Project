@@ -76,7 +76,7 @@ if ((time_count == 20) &amp;&amp; (jumped = 1))
    }
    if (time_count &gt;= (max_timer-15))
    {
-   if ((obj_Cowboy.x) &gt; (x))
+   if ((obj_Player.x) &gt; (x))
     {
     dir = 1;
     }

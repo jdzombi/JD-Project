@@ -20,6 +20,13 @@
   <width>80</width>
   <height>80</height>
   <frames>
-    <frame index="0">images\spr_Cowboy_0.png</frame>
+    <frame index="0">images\spr_Player_WalkRight_0.png</frame>
+    <frame index="1">images\spr_Player_WalkRight_1.png</frame>
+    <frame index="2">images\spr_Player_WalkRight_2.png</frame>
+    <frame index="3">images\spr_Player_WalkRight_3.png</frame>
+    <frame index="4">images\spr_Player_WalkRight_4.png</frame>
+    <frame index="5">images\spr_Player_WalkRight_5.png</frame>
+    <frame index="6">images\spr_Player_WalkRight_6.png</frame>
+    <frame index="7">images\spr_Player_WalkRight_7.png</frame>
   </frames>
 </sprite>

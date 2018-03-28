@@ -17,6 +17,9 @@
     <sprite>sprites\spr_SlimeJump</sprite>
     <sprite>sprites\spr_SlimeFall</sprite>
     <sprite>sprites\spr_Sign</sprite>
+    <sprites name="Icons">
+      <sprite>sprites\spr_Key_U</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

@@ -29,6 +29,7 @@
     <object>objects\obj_Player</object>
     <object>objects\obj_Slime</object>
     <object>objects\obj_Sign</object>
+    <object>objects\obj_u_key</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

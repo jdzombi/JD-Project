@@ -82,14 +82,15 @@ draw_set_alpha(alpha);
 if (alpha &lt; 1) alpha += spd/10; else alpha = 1;
 
 draw_set_font(font);
-draw_set_color(c_gray);
+draw_sprite(spr_textbox,0,view_xview,y);
+/*draw_set_color(c_gray);
 draw_rectangle(x,y,x+boxwidth,y+boxwidth,0);
 draw_set_color(c_black);
 draw_rectangle(x,y,x+boxwidth,y+boxwidth,1);
 
 draw_set_color(c_white);
 draw_set_halign(fa_left);
-draw_set_valign(fa_top);
+draw_set_valign(fa_top);*/
 draw_text_ext(x + padding,y + padding,print,font_size+(font_size/2),maxlength);
 
 draw_set_alpha(1);

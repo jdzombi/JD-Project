@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>spr_Sign</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>txtbx = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -27,9 +50,13 @@
             <kind>1</kind>
             <string>if (abs(distance_to_object(obj_Player)) &lt; 10) {
 instance_create(x-20,y-74,obj_u_key)
-if (keyboard_check_pressed(ord("U"))){
-scr_text("The Quick Brown Fox Jumped Over The Lazy Dog",0.5,x,y) 
+if (keyboard_check_pressed(ord("U")))&amp;&amp; (txtbx != 1){
+scr_text("The Quick Brown Fox Jumped Over The Lazy Dog The Quick Brown Fox Jumped Over The Lazy Dog",0.5,view_xview,y+44) 
+txtbx = 1
 }
+if (keyboard_check_pressed(vk_enter))&amp;&amp; (txtbx = 1) {instance_deactivate_object(obj_text)
+global.freeze = 0
+txtbx = 0}
 }
 </string>
           </argument>

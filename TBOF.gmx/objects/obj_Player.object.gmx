@@ -148,9 +148,9 @@ key_shift = keyboard_check(vk_shift)
 
 //React to Input
 move = key_left + key_right;
-hsp = move * movespeed;
 dir = sign(hsp);
 if(alarm[2]&lt;0){
+hsp = move * movespeed;
   // go a head and move
 if ((key_shift = 1) &amp;&amp; ((key_right = 1) &amp;&amp; (hsp &lt; MAX_SPEED)) || ((key_left = -1) &amp;&amp; (hsp &gt; - MAX_SPEED))) { 
      movespeed += acc;
@@ -230,7 +230,7 @@ if (no_hit = 0)
     if (place_meeting(x,y+1,obj_Slime)){
         if(alarm[2]&lt;0){
         y += vsp + -jumpspeed;
-  hsp= -(sign(hsp)*movespeed);
+  hsp= -movespeed;
   vsp= movespeed*median(-1,1,other.y-y);
   alarm[2]=room_speed*1;
   no_hit = 1;

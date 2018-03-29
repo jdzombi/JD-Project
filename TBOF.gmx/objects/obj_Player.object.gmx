@@ -138,7 +138,8 @@ if no_hit=1 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Get Player Input
+            <string>if (global.freeze != 1) {
+//Get Player Input
 key_right = keyboard_check(ord("D"));
 key_left = -keyboard_check(ord("A"));
 key_jump = keyboard_check_pressed(vk_space);
@@ -238,7 +239,7 @@ if (no_hit = 0)
     } 
     }
     }
-
+}
 </string>
           </argument>
         </arguments>

@@ -23,6 +23,12 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_text.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_GrassTile</object>
     <object>objects\obj_DirtTile</object>
@@ -30,6 +36,7 @@
     <object>objects\obj_Slime</object>
     <object>objects\obj_Sign</object>
     <object>objects\obj_u_key</object>
+    <object>objects\obj_text</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

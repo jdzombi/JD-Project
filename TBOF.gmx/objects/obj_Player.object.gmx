@@ -84,15 +84,14 @@ sprite_index = spr_Player
             <kind>1</kind>
             <string>if image_alpha=1.0 {
     image_alpha=0.3
-    }
-    else
-    {
+}
+else {
     image_alpha=1.0
-    }
+}
     
 if no_hit=1 {
     alarm[1] = 2
-    }
+}
 </string>
           </argument>
         </arguments>
@@ -139,105 +138,88 @@ if no_hit=1 {
           <argument>
             <kind>1</kind>
             <string>if (global.freeze != 1) {
-//Get Player Input
-key_right = keyboard_check(ord("D"));
-key_left = -keyboard_check(ord("A"));
-key_jump = keyboard_check_pressed(vk_space);
-key_jump_held = keyboard_check(vk_space);
-key_shift = keyboard_check(vk_shift)
+    //Get Player Input
+    key_right = keyboard_check(ord("D"));
+    key_left = -keyboard_check(ord("A"));
+    key_jump = keyboard_check_pressed(vk_space);
+    key_jump_held = keyboard_check(vk_space);
+    key_shift = keyboard_check(vk_shift)
 
-//React to Input
-move = key_left + key_right;
-dir = sign(hsp);
-if(alarm[2]&lt;0){
-hsp = move * movespeed;
-  // go a head and move
-if ((key_shift = 1) &amp;&amp; ((key_right = 1) &amp;&amp; (hsp &lt; MAX_SPEED)) || ((key_left = -1) &amp;&amp; (hsp &gt; - MAX_SPEED))) { 
-     movespeed += acc;
-     image_speed +=acc;
-     }
+    //React to Input
+    move = key_left + key_right;
+    dir = sign(hsp);
+    if(alarm[2]&lt;0){
+        hsp = move * movespeed;
+        // go a head and move
+        if ((key_shift = 1) &amp;&amp; ((key_right = 1) &amp;&amp; (hsp &lt; MAX_SPEED)) || ((key_left = -1) &amp;&amp; (hsp &gt; - MAX_SPEED))) { 
+            movespeed += acc;
+            image_speed +=acc;
+        }
      
-if (move = 0) {
-    movespeed = 5  
-    image_speed = 1
+        if (move = 0) {
+            movespeed = 5  
+            image_speed = 1
+        }
+        if ((key_shift = 0) &amp;&amp; (movespeed &gt; 5)) {
+            movespeed -= (acc*1.2);
+            image_speed -= (acc*1.2);
+        }
+        if (vsp &lt; 10) vsp += grav;
+        if (place_meeting (x,y+1, obj_GrassTile)) {
+            vsp = key_jump * -jumpspeed
+        }
+        if vsp&lt;0 &amp;&amp; (!key_jump_held) vsp = max(vsp,-jumpspeed/2)
+
+        //Horizontal Collision
+        if (place_meeting(x+hsp,y,obj_GrassTile)) {
+            while(!place_meeting(x+sign(hsp),y,obj_GrassTile)) {
+                x += sign(hsp);
+            }
+            hsp = 0;
+        }
+        x+= hsp;
     }
-if ((key_shift = 0) &amp;&amp; (movespeed &gt; 5)) {
-     movespeed -= (acc*1.2);
-     image_speed -= (acc*1.2);
-     }
-if (vsp &lt; 10) vsp += grav;
 
-if (place_meeting (x,y+1, obj_GrassTile))
-{
-    vsp = key_jump * -jumpspeed
-}
-if vsp&lt;0 &amp;&amp; (!key_jump_held) vsp = max(vsp,-jumpspeed/2)
-
-//Horizontal Collision
-if (place_meeting(x+hsp,y,obj_GrassTile))
-{
-    while(!place_meeting(x+sign(hsp),y,obj_GrassTile))
-    {
-        x += sign(hsp);
+    //Vertical Collision
+    if (place_meeting(x,y+vsp,obj_GrassTile)) {
+        while(!place_meeting(x,y+sign(vsp),obj_GrassTile)) {
+            y += sign(vsp);
+        }
+        vsp = 0;
     }
-    hsp = 0;
-}
-x+= hsp;
-}
-else{
- 
-}
+    y+= vsp;
 
-//Vertical Collision
-if (place_meeting(x,y+vsp,obj_GrassTile))
-{
-    while(!place_meeting(x,y+sign(vsp),obj_GrassTile))
-    {
-        y += sign(vsp);
+    //Animate
+    if (move!=0) image_xscale = move;
+    if (!place_meeting(x,y+1,obj_GrassTile)) {
+        if (vsp &lt; 0) sprite_index = spr_Player_Jump; else sprite_index = spr_Player_Fall; // sprite_index = spr_PlayerJump; else sprite_index = spr_PlayerFall;
     }
-    vsp = 0;
-}
-
-y+= vsp;
-
-
-//Animate
-if (move!=0) image_xscale = move;
-if (!place_meeting(x,y+1,obj_GrassTile))
-{
-    if (vsp &lt; 0) sprite_index = spr_Player_Jump; else sprite_index = spr_Player_Fall; // sprite_index = spr_PlayerJump; else sprite_index = spr_PlayerFall;
-}
-else
-{
-   image_speed = .33;
-   if (hsp==0) 
-   {
-        sprite_index = spr_Player
-   }
-   else
-   {
-       if (hsp!= 0) sprite_index = spr_Player_WalkRight
-       else
-       {
-            sprite_index = spr_Player 
-       }
-  }
-}
-//Enemy Collision
-
-if (no_hit = 0)       
-        {
-    if (place_meeting(x,y+1,obj_Slime)){
-        if(alarm[2]&lt;0){
-        y += vsp + -jumpspeed;
-  hsp= -movespeed;
-  vsp= movespeed*median(-1,1,other.y-y);
-  alarm[2]=room_speed*1;
-  no_hit = 1;
-  alarm[0] = 60
-  alarm[1] = 2
-    } 
+    else {
+        image_speed = .33;
+        if (hsp==0) {
+            sprite_index = spr_Player
+        }
+        else {
+            if (hsp!= 0) sprite_index = spr_Player_WalkRight;
+            else {
+                sprite_index = spr_Player 
+            }
+        }
     }
+    
+    //Enemy Collision
+    if (no_hit = 0) {
+        if (place_meeting(x,y+1,obj_Slime)){
+            if(alarm[2]&lt;0){
+                y += vsp + -jumpspeed;
+                hsp= -movespeed;
+                vsp= movespeed*median(-1,1,other.y-y);
+                alarm[2]=room_speed*1;
+                no_hit = 1;
+                alarm[0] = 60
+                alarm[1] = 2
+            } 
+        }
     }
 }
 </string>

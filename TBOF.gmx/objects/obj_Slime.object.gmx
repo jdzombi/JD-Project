@@ -65,83 +65,68 @@ image_speed = .1
             <kind>1</kind>
             <string>//Movement
 if (global.freeze != 1) {
-hsp = dir * movespeed;
-if (vsp &lt; 10) vsp += grav;
-if ((time_count == 20) &amp;&amp; (jumped = 1))
-{
-    movespeed = 0;
-    if hsp=0 {
-    image_xscale = sign(dir)
+    hsp = dir * movespeed;
+    if (vsp &lt; 10) vsp += grav;
+    if ((time_count == 20) &amp;&amp; (jumped = 1)) {
+        movespeed = 0;
+        if hsp=0 {
+            image_xscale = sign(dir)
+        }
+        jumped = 0;
     }
-    jumped = 0;
-   }
-   if (time_count &gt;= (max_timer-15))
-   {
-   if ((obj_Player.x) &gt; (x))
-    {
-    dir = 1;
+    if (time_count &gt;= (max_timer-15)) {
+        if ((obj_Player.x) &gt; (x)) {
+            dir = 1;
+        }
+        else {
+            dir = -1;
+        }
     }
-    else
-    {
-    dir = -1;
-    }
-   }
-if (time_count &gt;= max_timer)
-{
+
     //Action
-    max_timer = irandom_range(60,180)
-    vsp = -jumpspeed;
-    movespeed = 2;
-    time_count = 0;
-    jumped = 1;
-    
-    
-    
-}
-else {
-    time_count++;
+    if (time_count &gt;= max_timer) {
+        max_timer = irandom_range(60,180)
+        vsp = -jumpspeed;
+        movespeed = 2;
+        time_count = 0;
+        jumped = 1;
     }
-//Horizontal Collision
-if (place_meeting(x+hsp,y,obj_GrassTile))
-{
-    while(!place_meeting(x+sign(hsp),y,obj_GrassTile))
-    {
-        x += sign(hsp);
+    else {
+        time_count++;
     }
-    hsp = 0;
 
-    
-    dir *= -1;
-}
-x+= hsp;
-
-//Vertical Collision
-if (place_meeting(x,y+vsp,obj_GrassTile))
-{
-    while(!place_meeting(x,y+sign(vsp),obj_GrassTile))
-    {
-        y += sign(vsp);
+    //Horizontal Collision
+    if (place_meeting(x+hsp,y,obj_GrassTile)) {
+        while(!place_meeting(x+sign(hsp),y,obj_GrassTile)) {
+            x += sign(hsp);
+        }
+        hsp = 0;    
+        dir *= -1;
     }
-    vsp = 0;
-    if !position_meeting (x+(sprite_width/2)*dir, y+(sprite_height/2)+8, obj_GrassTile)
-    {
-        dir *= -1
-    } 
-}
-y+= vsp;
+    x+= hsp;
 
+    //Vertical Collision
+    if (place_meeting(x,y+vsp,obj_GrassTile)) {
+        while(!place_meeting(x,y+sign(vsp),obj_GrassTile)) {
+            y += sign(vsp);
+        }
+        vsp = 0;
+        if !position_meeting (x+(sprite_width/2)*dir, y+(sprite_height/2)+8, obj_GrassTile) {
+            dir *= -1
+        }
+    }
+    y+= vsp;
 
-//Animate
-
-if (!place_meeting(x,y+1,obj_GrassTile))
-{
- if (vsp &lt; 0) sprite_index = spr_SlimeJump else sprite_index = spr_SlimeFall;
- }
- image_xscale = dir;
+    //Animate
+    if (!place_meeting(x,y+1,obj_GrassTile)) {
+        if (vsp &lt; 0) sprite_index = spr_SlimeJump else sprite_index = spr_SlimeFall;
+    }
+    image_xscale = dir;
  
- if hsp=0{
-    sprite_index= spr_SlimeGround}
+    if hsp=0 {
+        sprite_index= spr_SlimeGround
     }
+}
 </string>
           </argument>
         </arguments>

@@ -34,9 +34,79 @@ jumpspeed = 16;
 movespeed = 5;
 MAX_SPEED = 10;
 no_hit = 0;
-
+knockBackCounter = 0;
 
 sprite_index = spr_Player
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Knockback Alarm
+global.freeze = 1;
+
+xChart[0] = 1;
+xChart[1] = 2;
+xChart[2] = 3;
+xChart[3] = 4;
+xChart[4] = 5;
+xChart[5] = 6;
+xChart[6] = 7;
+xChart[7] = 8;
+xChart[8] = 9;
+xChart[9] = 10;
+
+yChart[0] = 1;
+yChart[1] = 2;
+yChart[2] = 3;
+yChart[3] = 4;
+yChart[4] = 5;
+yChart[5] = 6;
+yChart[6] = 7;
+yChart[7] = 8;
+yChart[8] = 9;
+yChart[9] = 10;
+
+
+knockBackCounter++;
+
+if (knockBackCounter &gt; 9) {
+    alarm[3] = -1
+}
+else {
+    if (hsp &lt; 0) {
+        x += xChart[knockBackCounter];
+    }
+    else {
+        x -= xChart[knockBackCounter];
+    }
+    y -= yChart[knockBackCounter];
+    
+    alarm[3] = 10;
+}
+
+if (knockBackCounter &gt; 9) {
+    knockBackCounter = 0;
+    global.freeze = 0;
+}
+exit
 </string>
           </argument>
         </arguments>
@@ -211,9 +281,7 @@ if no_hit=1 {
     if (no_hit = 0) {
         if (place_meeting(x,y+1,obj_Slime)){
             if(alarm[2]&lt;0){
-                y += vsp + -jumpspeed;
-                hsp= -movespeed;
-                vsp= movespeed*median(-1,1,other.y-y);
+                alarm[3] = 1;
                 alarm[2]=room_speed*1;
                 no_hit = 1;
                 alarm[0] = 60

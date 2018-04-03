@@ -12,11 +12,15 @@
     <sprite>sprites\spr_Player_Fall</sprite>
     <sprite>sprites\spr_Player_Jump</sprite>
     <sprite>sprites\sp_DritTile</sprite>
-    <sprite>sprites\spr_Slime</sprite>
-    <sprite>sprites\spr_SlimeGround</sprite>
-    <sprite>sprites\spr_SlimeJump</sprite>
-    <sprite>sprites\spr_SlimeFall</sprite>
     <sprite>sprites\spr_Sign</sprite>
+    <sprites name="Enemies">
+      <sprite>sprites\spr_SlimeGround</sprite>
+      <sprite>sprites\spr_Slime</sprite>
+      <sprite>sprites\spr_SlimeJump</sprite>
+      <sprite>sprites\spr_SlimeFall</sprite>
+      <sprite>sprites\spr_Rose</sprite>
+      <sprite>sprites\spr_RoseWalk</sprite>
+    </sprites>
     <sprites name="Icons">
       <sprite>sprites\spr_Key_U</sprite>
     </sprites>
@@ -38,6 +42,7 @@
     <object>objects\obj_Sign</object>
     <object>objects\obj_u_key</object>
     <object>objects\obj_text</object>
+    <object>objects\obj_Rose</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

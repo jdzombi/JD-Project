@@ -30,6 +30,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_text.gml</script>
+    <script>scripts\scr_Collisions.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt</font>

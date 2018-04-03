@@ -81,6 +81,7 @@ vsp = 0;
             <string>///Animate
 if hsp!=0 {
         sprite_index= spr_RoseWalk
+        image_speed = .3
     }
     else {
     sprite_index=spr_Rose

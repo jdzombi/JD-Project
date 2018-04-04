@@ -15,7 +15,7 @@
             y += sign(vsp);
         }
         vsp = 0;
-        if !position_meeting (x+(sprite_width/2)*dir, y+(sprite_height/2)+8, obj_GrassTile) {
+        if !position_meeting (x+(32)*dir, y+(32)+8, obj_GrassTile) {
             dir *= -1
         }
     }

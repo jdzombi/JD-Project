@@ -168,7 +168,24 @@ if no_hit=1 {
         }
         if vsp&lt;0 &amp;&amp; (!key_jump_held) vsp = max(vsp,-jumpspeed/2)
 
-        //Horizontal Collision
+    
+    //Enemy Collision
+    if (no_hit = 0) {
+        if (place_meeting(x,y+1,obj_Slime)) {
+            if(alarm[2]&lt;0){
+                hit = instance_place(x,y,obj_Slime)
+                hsp = (hit.dir * ((hit.hsp + hsp)+5))
+                vsp = -0.5;
+                
+                alarm[2]=room_speed*0.2;
+                no_hit = 1;
+                alarm[0] = 60
+                alarm[1] = 2
+            } 
+        }
+    }
+}
+    //Horizontal Collision
         if (place_meeting(x+hsp,y,obj_GrassTile)) {
             while(!place_meeting(x+sign(hsp),y,obj_GrassTile)) {
                 x += sign(hsp);
@@ -205,26 +222,22 @@ if no_hit=1 {
         }
     }
 
-    //Enemy Collision
-    if (no_hit = 0) {
-        if (place_meeting(x,y+1,obj_Slime)) {
-            if(alarm[2]&lt;0){
-                if (hsp &lt; 0) {
-                    hsp = 1 * 10;
-                }
-                else {
-                    hsp = -1 * 10;
-                }
-                vsp = -0.5;
-                
-                alarm[2]=room_speed*0.2;
-                no_hit = 1;
-                alarm[0] = 60
-                alarm[1] = 2
-            } 
-        }
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>

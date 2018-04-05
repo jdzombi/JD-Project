@@ -31,6 +31,8 @@ movespeed = 2;
 grav = 1.0;
 hsp = 1;
 vsp = 0;
+jump = 16;
+player = 0;
 </string>
           </argument>
         </arguments>
@@ -54,10 +56,18 @@ vsp = 0;
           <argument>
             <kind>1</kind>
             <string>///Movement
-    hsp = dir * movespeed;
-    if (vsp &lt; 10) vsp += grav;
-    image_xscale = -sign(dir);
-    scr_Collisions();
+   if (abs(distance_to_object(obj_Player)) &lt; 800) {
+        hsp = dir * movespeed;
+        if (vsp &lt; 10) vsp += grav;
+        image_xscale = -sign(dir);
+        scr_Collisions();
+        if ((obj_Player.x) &gt; (x)) {
+            player = 1;
+        }
+        else {
+            player = -1;
+        }   
+   }
 </string>
           </argument>
         </arguments>

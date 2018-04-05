@@ -174,7 +174,19 @@ if no_hit=1 {
         if (place_meeting(x,y+1,obj_Slime)) {
             if(alarm[2]&lt;0){
                 hit = instance_place(x,y,obj_Slime)
-                hsp = (hit.dir * ((hit.hsp + hsp)+5))
+                hsp = (hit.player * ((hit.hsp + hsp)+5))
+                vsp = -0.5;
+                
+                alarm[2]=room_speed*0.2;
+                no_hit = 1;
+                alarm[0] = 60
+                alarm[1] = 2
+            } 
+        }
+        if (place_meeting(x,y+1,obj_Rose)) {
+            if(alarm[2]&lt;0){
+                hit = instance_place(x,y,obj_Rose)
+                hsp = (hit.player * ((hit.hsp + hsp)+5))
                 vsp = -0.5;
                 
                 alarm[2]=room_speed*0.2;

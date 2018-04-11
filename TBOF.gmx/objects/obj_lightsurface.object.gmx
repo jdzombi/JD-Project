@@ -28,6 +28,7 @@
             <string>surface = surface_create(room_width,room_height);
 surfaceScale = 1/8;
 depth = -1;
+l = 1
 </string>
           </argument>
         </arguments>

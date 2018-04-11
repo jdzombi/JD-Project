@@ -45,8 +45,6 @@
     <object>objects\obj_u_key</object>
     <object>objects\obj_text</object>
     <object>objects\obj_Rose</object>
-    <object>objects\obj_light</object>
-    <object>objects\obj_lightsurface</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

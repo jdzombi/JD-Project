@@ -55,6 +55,14 @@ lightSize += flicker;
 lightSize = clamp(lightSize,6,8);
 x = obj_Player.x;
 y = obj_Player.y;
+
+
+if obj_lightsurface.l = 1 {
+ draw_set_blend_mode(bm_src_color);
+ draw_sprite_ext(spr_Light,0,x*obj_lightsurface.surfaceScale,y*obj_lightsurface.surfaceScale,lightSize*obj_lightsurface.surfaceScale,lightSize*obj_lightsurface.surfaceScale,0,c_white,lightStrength);
+ draw_set_blend_mode(bm_normal);
+ depth = -1;
+}
 </string>
           </argument>
         </arguments>

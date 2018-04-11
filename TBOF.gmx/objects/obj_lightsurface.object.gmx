@@ -44,7 +44,7 @@ depth = -1;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -53,14 +53,6 @@ depth = -1;
             <string>surface_set_target(surface);
 draw_set_alpha(0.5);
 draw_clear(c_black);
-
-
-with(obj_light){
-    draw_set_blend_mode(bm_src_color);
-    draw_sprite_ext(spr_Light,0,x*other.surfaceScale,y*other.surfaceScale,lightSize*other.surfaceScale,lightSize*other.surfaceScale,0,c_white,lightStrength);
-    draw_set_blend_mode(bm_normal);
-    depth = -1;
-}
 
 surface_reset_target();
 

@@ -82,14 +82,14 @@ sprite_index = spr_Player
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_alpha=1.0 {
-    image_alpha=0.3
+            <string>if (image_alpha = 1.0) {
+    image_alpha = 0.3
 }
 else {
-    image_alpha=1.0
+    image_alpha = 1.0
 }
-    
-if no_hit=1 {
+
+if (no_hit = 1) {
     alarm[1] = 2
 }
 </string>
@@ -147,16 +147,16 @@ if no_hit=1 {
 
     //React to Input
     move = key_left + key_right;
-    if(alarm[2]&lt;0){
+    if (alarm[2]&lt;0) {
         hsp = move * movespeed;
         if ((key_shift = 1) &amp;&amp; ((key_right = 1) &amp;&amp; (hsp &lt; MAX_SPEED)) || ((key_left = -1) &amp;&amp; (hsp &gt; - MAX_SPEED))) { 
             movespeed += acc;
-            image_speed +=acc;
+            image_speed += acc;
         }
      
         if (move = 0) {
-            movespeed = 5  
-            image_speed = 1
+            movespeed = 5;
+            image_speed = 1;
         }
         if ((key_shift = 0) &amp;&amp; (movespeed &gt; 5)) {
             movespeed -= (acc*1.2);
@@ -166,90 +166,71 @@ if no_hit=1 {
         if (place_meeting (x,y+1, obj_GrassTile)) {
             vsp = key_jump * -jumpspeed
         }
-        if vsp&lt;0 &amp;&amp; (!key_jump_held) vsp = max(vsp,-jumpspeed/2)
-
-    
-    //Enemy Collision
-    if (no_hit = 0) {
-        if (place_meeting(x,y+1,obj_Slime)) {
-            if(alarm[2]&lt;0){
-                hit = instance_place(x,y,obj_Slime)
-                hsp = (hit.player * ((hit.hsp + hsp)+5))
-                vsp = -0.5;
-                
-                alarm[2]=room_speed*0.2;
-                no_hit = 1;
-                alarm[0] = 60
-                alarm[1] = 2
-            } 
+        if (vsp&lt;0 &amp;&amp; (!key_jump_held)) vsp = max(vsp,-jumpspeed/2)
+        
+        //Enemy Collision
+        if (no_hit = 0) {
+            if (place_meeting(x,y+1,obj_Slime)) {
+                if (alarm[2]&lt;0) {
+                    hit = instance_place(x,y,obj_Slime)
+                    hsp = (hit.player * ((hit.hsp + hsp)+5))
+                    vsp = -0.5;
+                    alarm[2]=room_speed*0.2;
+                    no_hit = 1;
+                    alarm[0] = 60;
+                    alarm[1] = 2;
+                }
+            }
+            if (place_meeting(x,y+1,obj_Rose)) {
+                if (alarm[2]&lt;0) {
+                    hit = instance_place(x,y,obj_Rose)
+                    hsp = (hit.player * ((hit.hsp + hsp)+5))
+                    vsp = -0.5;
+                    alarm[2] = room_speed*0.2;
+                    no_hit = 1;
+                    alarm[0] = 60;
+                    alarm[1] = 2;
+                }
+            }
         }
-        if (place_meeting(x,y+1,obj_Rose)) {
-            if(alarm[2]&lt;0){
-                hit = instance_place(x,y,obj_Rose)
-                hsp = (hit.player * ((hit.hsp + hsp)+5))
-                vsp = -0.5;
-                
-                alarm[2]=room_speed*0.2;
-                no_hit = 1;
-                alarm[0] = 60
-                alarm[1] = 2
-            } 
+    }
+     
+    //Horizontal Collision
+    if (place_meeting(x+hsp,y,obj_GrassTile)) {
+        while(!place_meeting(x+sign(hsp),y,obj_GrassTile)) {
+            x += sign(hsp);
+        }
+        hsp = 0;
+    }
+}
+x += hsp;
+    
+//Vertical Collision
+if (place_meeting(x,y+vsp,obj_GrassTile)) {
+    while(!place_meeting(x,y+sign(vsp),obj_GrassTile)) {
+        y += sign(vsp);
+    }
+    vsp = 0;
+}
+y += vsp;
+
+//Animate
+if (move!=0) image_xscale = move;
+if (!place_meeting(x,y+1,obj_GrassTile)) {
+    if (vsp &lt; 0) sprite_index = spr_Player_Jump; else sprite_index = spr_Player_Fall;
+}
+else {
+    image_speed = .33;
+    if (hsp==0) {
+        sprite_index = spr_Player
+    }
+    else {
+        if (hsp!= 0) sprite_index = spr_Player_WalkRight;
+        else {
+            sprite_index = spr_Player;
         }
     }
 }
-    //Horizontal Collision
-        if (place_meeting(x+hsp,y,obj_GrassTile)) {
-            while(!place_meeting(x+sign(hsp),y,obj_GrassTile)) {
-                x += sign(hsp);
-            }
-            hsp = 0;
-        }
-    }
-    x += hsp;
-    
-    //Vertical Collision
-    if (place_meeting(x,y+vsp,obj_GrassTile)) {
-        while(!place_meeting(x,y+sign(vsp),obj_GrassTile)) {
-            y += sign(vsp);
-        }
-        vsp = 0;
-    }
-    y += vsp;
-
-    //Animate
-    if (move!=0) image_xscale = move;
-    if (!place_meeting(x,y+1,obj_GrassTile)) {
-        if (vsp &lt; 0) sprite_index = spr_Player_Jump; else sprite_index = spr_Player_Fall; // sprite_index = spr_PlayerJump; else sprite_index = spr_PlayerFall;
-    }
-    else {
-        image_speed = .33;
-        if (hsp==0) {
-            sprite_index = spr_Player
-        }
-        else {
-            if (hsp!= 0) sprite_index = spr_Player_WalkRight;
-            else {
-                sprite_index = spr_Player;
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </string>
           </argument>
         </arguments>

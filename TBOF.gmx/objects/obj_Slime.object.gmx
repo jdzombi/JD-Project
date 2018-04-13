@@ -41,7 +41,7 @@ image_blend = make_colour_hsv(irandom(255), irandom(255), irandom(255));
 
 sprite_index = spr_SlimeGround
 
-image_speed = .1
+image_speed = .1;
 </string>
           </argument>
         </arguments>
@@ -85,7 +85,7 @@ if (global.freeze != 1) {
     }
 
     //Jump
-   if (abs(distance_to_object(obj_Player)) &lt; 800) {
+    if (abs(distance_to_object(obj_Player)) &lt; 800) {
         if (time_count &gt;= max_timer) {
             max_timer = irandom_range(60,180)
             vsp = -jump;
@@ -96,7 +96,7 @@ if (global.freeze != 1) {
         else {
             time_count++;
         }
-   }
+    }
     //Collision
     scr_Collisions()
     
@@ -106,16 +106,16 @@ if (global.freeze != 1) {
     }
     image_xscale = dir;
  
-    if hsp=0 {
+    if (hsp=0) {
         sprite_index= spr_SlimeGround
     }
 }
 if ((obj_Player.x) &gt; (x)) {
-            player = 1;
-        }
-        else {
-            player = -1;
-        }
+    player = 1;
+}
+else {
+    player = -1;
+}
 </string>
           </argument>
         </arguments>

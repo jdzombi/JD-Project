@@ -51,6 +51,7 @@
             <string>if (abs(distance_to_object(obj_Player)) &lt; 10) {
     instance_create(x-20,y-74,obj_u_key)
     if ((keyboard_check_pressed(ord("U"))) &amp;&amp; (txtbx != 1)) {
+        obj_Player.hsp=0;
         scr_text("The Quick Brown Fox Jumped Over The Lazy Dog The Quick Brown Fox Jumped Over The Lazy Dog",0.5,view_xview,y+44) 
         txtbx = 1
     }

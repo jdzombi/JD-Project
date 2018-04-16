@@ -709,6 +709,8 @@
     <instance objName="obj_Rose" x="2560" y="5376" name="inst_ADE8C166" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Rose" x="5696" y="5312" name="inst_246E2EB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Rose" x="6400" y="5248" name="inst_941F41F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Flower1" x="495" y="5568" name="inst_35CA6529" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Flower1" x="320" y="5568" name="inst_7D7AFB57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

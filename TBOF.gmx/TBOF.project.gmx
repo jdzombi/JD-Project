@@ -13,6 +13,7 @@
     <sprite>sprites\spr_GrassTile</sprite>
     <sprite>sprites\sp_DritTile</sprite>
     <sprite>sprites\spr_Flower1</sprite>
+    <sprite>sprites\spr_Flower2</sprite>
     <sprite>sprites\spr_Sign</sprite>
     <sprites name="Enemies">
       <sprite>sprites\spr_SlimeGround</sprite>
@@ -47,6 +48,7 @@
     <object>objects\obj_text</object>
     <object>objects\obj_Rose</object>
     <object>objects\obj_Flower1</object>
+    <object>objects\obj_Flower2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

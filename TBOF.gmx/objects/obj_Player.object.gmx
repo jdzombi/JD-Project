@@ -220,12 +220,12 @@ if (!place_meeting(x,y+1,obj_GrassTile)) {
     if (vsp &lt; 0) sprite_index = spr_Player_Jump; else sprite_index = spr_Player_Fall;
 }
 else {
-    image_speed = .33;
+    image_speed = .25;
     if (hsp==0) {
         sprite_index = spr_Player
     }
     else {
-        if (hsp!= 0) sprite_index = spr_Player_WalkRight;
+        if (hsp!= 0) sprite_index = spr_Player_Walk;
         else {
             sprite_index = spr_Player;
         }

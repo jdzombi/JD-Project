@@ -7,7 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_Player</sprite>
-    <sprite>sprites\spr_Player_WalkRight</sprite>
+    <sprite>sprites\spr_Player_Walk</sprite>
     <sprite>sprites\spr_Player_Fall</sprite>
     <sprite>sprites\spr_Player_Jump</sprite>
     <sprite>sprites\spr_GrassTile</sprite>

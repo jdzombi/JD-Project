@@ -60,7 +60,7 @@ sprite_index = spr_Player
           <argument>
             <kind>1</kind>
             <string>obj_HP.HP -= 1;
-hsp = 0
+//hsp = 0
 </string>
           </argument>
         </arguments>
@@ -180,7 +180,8 @@ if (no_hit = 1) {
                 if (alarm[2]&lt;0) {
                     hit = instance_place(x,y,obj_Slime)
                     hsp = (hit.player * ((hit.hsp + hsp)+10))
-                    vsp = -0.5;
+                    hsp *= 0.9
+                    vsp = -1;
                     alarm[2]=room_speed*0.2;
                     no_hit = 1;
                     alarm[0] = 60;
@@ -191,7 +192,8 @@ if (no_hit = 1) {
                 if (alarm[2]&lt;0) {
                     hit = instance_place(x,y,obj_Rose)
                     hsp = (hit.player * ((hit.hsp + hsp)+5))
-                    vsp = -0.5;
+                    hsp *= 0.9
+                    vsp = -1;
                     alarm[2] = room_speed*0.2;
                     no_hit = 1;
                     alarm[0] = 60;

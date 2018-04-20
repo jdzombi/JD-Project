@@ -149,7 +149,12 @@ if (no_hit = 1) {
     //React to Input
     move = key_left + key_right;
     if (alarm[2]&lt;0) {
+    if move !=0 {
         hsp = move * movespeed;
+        }
+        else {
+        hsp *= 0.9
+        } 
         if ((key_shift = 1) &amp;&amp; ((key_right = 1) &amp;&amp; (hsp &lt; MAX_SPEED)) || ((key_left = -1) &amp;&amp; (hsp &gt; - MAX_SPEED))) { 
             movespeed += acc;
             image_speed += acc;

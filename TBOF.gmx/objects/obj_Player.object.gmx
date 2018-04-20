@@ -59,7 +59,8 @@ sprite_index = spr_Player
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hsp = 0
+            <string>obj_HP.HP -= 1;
+hsp = 0
 </string>
           </argument>
         </arguments>
@@ -114,7 +115,7 @@ if (no_hit = 1) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>no_hit = 0
+            <string>no_hit = 0;
 </string>
           </argument>
         </arguments>
@@ -202,8 +203,9 @@ if (no_hit = 1) {
         }
         hsp = 0;
     }
-}
+y += vsp;
 x += hsp;
+}
     
 //Vertical Collision
 if (place_meeting(x,y+vsp,obj_GrassTile)) {
@@ -212,7 +214,7 @@ if (place_meeting(x,y+vsp,obj_GrassTile)) {
     }
     vsp = 0;
 }
-y += vsp;
+
 
 //Animate
 if (move!=0) image_xscale = move;

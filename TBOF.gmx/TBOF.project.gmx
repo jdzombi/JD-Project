@@ -28,6 +28,7 @@
       <sprite>sprites\spr_textbox</sprite>
     </sprites>
     <sprite>sprites\spr_Light</sprite>
+    <sprite>sprites\spr_HP</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -49,6 +50,7 @@
     <object>objects\obj_Rose</object>
     <object>objects\obj_Flower1</object>
     <object>objects\obj_Flower2</object>
+    <object>objects\obj_HP</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

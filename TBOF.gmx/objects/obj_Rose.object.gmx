@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Variables
-dir = -1;
+            <string>dir = -1;
 movespeed = 2;
 grav = 1.0;
 hsp = 1;
@@ -55,13 +54,12 @@ player = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Movement
-if (abs(distance_to_object(obj_Player)) &lt; 800) {
+            <string>if (abs(distance_to_object(obj_Player)) &lt; 800) {
     hsp = dir * movespeed;
     if (vsp &lt; 10) vsp += grav;
     image_xscale = -sign(dir);
     scr_Collisions();
-    if ((obj_Player.x) &gt; (x)) {
+    if (obj_Player.x &gt; x) {
         player = 1;
     }
     else {
@@ -88,13 +86,12 @@ if (abs(distance_to_object(obj_Player)) &lt; 800) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Animate
-if (hsp != 0) {
-    sprite_index= spr_RoseWalk
-    image_speed = .3
+            <string>if (hsp != 0) {
+    sprite_index = spr_RoseWalk;
+    image_speed = 0.3;
 }
 else {
-    sprite_index=spr_Rose
+    sprite_index = spr_Rose;
 }
 </string>
           </argument>

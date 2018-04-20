@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Initialize Variables
-jumped = 0;
+            <string>jumped = 0;
 dir = -1;
 movespeed = 0;
 grav = 1.0;
@@ -39,9 +38,9 @@ max_timer = irandom_range(60, 180);
 
 image_blend = make_colour_hsv(irandom(255), irandom(255), irandom(255));
 
-sprite_index = spr_SlimeGround
+sprite_index = spr_SlimeGround;
 
-image_speed = .1;
+image_speed = 0.1;
 </string>
           </argument>
         </arguments>
@@ -70,8 +69,8 @@ if (global.freeze != 1) {
     if (vsp &lt; 10) vsp += grav;
     if ((time_count == 20) &amp;&amp; (jumped = 1)) {
         movespeed = 0;
-        if hsp=0 {
-            image_xscale = sign(dir)
+        if (hsp = 0) {
+            image_xscale = sign(dir);
         }
         jumped = 0;
     }
@@ -87,7 +86,7 @@ if (global.freeze != 1) {
     //Jump
     if (abs(distance_to_object(obj_Player)) &lt; 800) {
         if (time_count &gt;= max_timer) {
-            max_timer = irandom_range(60,180)
+            max_timer = irandom_range(60,180);
             vsp = -jump;
             movespeed = 2;
             time_count = 0;
@@ -107,7 +106,7 @@ if (global.freeze != 1) {
     image_xscale = dir;
  
     if (hsp=0) {
-        sprite_index= spr_SlimeGround
+        sprite_index= spr_SlimeGround;
     }
 }
 if ((obj_Player.x) &gt; (x)) {

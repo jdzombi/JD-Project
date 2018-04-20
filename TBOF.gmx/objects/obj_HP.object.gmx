@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>HP = 4
+            <string>HP = 4;
 </string>
           </argument>
         </arguments>
@@ -48,14 +48,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.freeze = 0 {
-hsp = obj_Player.hsp;
-vsp = obj_Player.vsp;
-x += hsp;
-y += vsp;
-if HP = 0 {
-global.freeze = 1
-}
+            <string>if (global.freeze = 0) {
+    x = obj_Player.x - 80;
+    y = obj_Player.y - 60;
+    if (HP = 0) {
+        global.freeze = 1;
+    }
 }
 image_index = HP;
 </string>

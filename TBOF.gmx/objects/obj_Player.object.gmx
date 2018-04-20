@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize Variables
-acc = 0.16;
+            <string>acc = 0.16;
 grav = 1.0;
 hsp = 0;
 vsp = 0;
@@ -36,7 +35,7 @@ MAX_SPEED = 10;
 no_hit = 0;
 knockBackCounter = 0;
 
-sprite_index = spr_Player
+sprite_index = spr_Player;
 </string>
           </argument>
         </arguments>
@@ -60,7 +59,6 @@ sprite_index = spr_Player
           <argument>
             <kind>1</kind>
             <string>obj_HP.HP -= 1;
-//hsp = 0
 </string>
           </argument>
         </arguments>
@@ -84,14 +82,14 @@ sprite_index = spr_Player
           <argument>
             <kind>1</kind>
             <string>if (image_alpha = 1.0) {
-    image_alpha = 0.3
+    image_alpha = 0.3;
 }
 else {
-    image_alpha = 1.0
+    image_alpha = 1.0;
 }
 
 if (no_hit = 1) {
-    alarm[1] = 2
+    alarm[1] = 2;
 }
 </string>
           </argument>
@@ -144,16 +142,16 @@ if (no_hit = 1) {
     key_left = -keyboard_check(ord("A"));
     key_jump = keyboard_check_pressed(vk_space);
     key_jump_held = keyboard_check(vk_space);
-    key_shift = keyboard_check(vk_shift)
+    key_shift = keyboard_check(vk_shift);
 
     //React to Input
     move = key_left + key_right;
     if (alarm[2]&lt;0) {
-    if move !=0 {
-        hsp = move * movespeed;
+        if (move != 0) {
+            hsp = move * movespeed;
         }
         else {
-        hsp *= 0.9
+            hsp *= 0.9;
         } 
         if ((key_shift = 1) &amp;&amp; ((key_right = 1) &amp;&amp; (hsp &lt; MAX_SPEED)) || ((key_left = -1) &amp;&amp; (hsp &gt; - MAX_SPEED))) { 
             movespeed += acc;
@@ -178,9 +176,9 @@ if (no_hit = 1) {
         if (no_hit = 0) {
             if (place_meeting(x,y+1,obj_Slime)) {
                 if (alarm[2]&lt;0) {
-                    hit = instance_place(x,y,obj_Slime)
-                    hsp = (hit.player * ((hit.hsp + hsp)+10))
-                    hsp *= 0.9
+                    hit = instance_place(x,y,obj_Slime);
+                    hsp = (hit.player * ((hit.hsp + hsp)+10));
+                    hsp *= 0.9;
                     vsp = -1;
                     alarm[2]=room_speed*0.2;
                     no_hit = 1;
@@ -190,11 +188,11 @@ if (no_hit = 1) {
             }
             if (place_meeting(x,y+1,obj_Rose)) {
                 if (alarm[2]&lt;0) {
-                    hit = instance_place(x,y,obj_Rose)
-                    hsp = (hit.player * ((hit.hsp + hsp)+5))
-                    hsp *= 0.9
+                    hit = instance_place(x,y,obj_Rose);
+                    hsp = (hit.player * ((hit.hsp + hsp) + 5));
+                    hsp *= 0.9;
                     vsp = -1;
-                    alarm[2] = room_speed*0.2;
+                    alarm[2] = room_speed * 0.2;
                     no_hit = 1;
                     alarm[0] = 60;
                     alarm[1] = 2;
@@ -210,8 +208,8 @@ if (no_hit = 1) {
         }
         hsp = 0;
     }
-y += vsp;
-x += hsp;
+    y += vsp;
+    x += hsp;
 }
     
 //Vertical Collision
@@ -229,12 +227,12 @@ if (!place_meeting(x,y+1,obj_GrassTile)) {
     if (vsp &lt; 0) sprite_index = spr_Player_Jump; else sprite_index = spr_Player_Fall;
 }
 else {
-    image_speed = .25;
+    image_speed = 0.25;
     if (hsp==0) {
-        sprite_index = spr_Player
+        sprite_index = spr_Player;
     }
     else {
-        if (hsp!= 0) sprite_index = spr_Player_Walk;
+        if (hsp != 0) sprite_index = spr_Player_Walk;
         else {
             sprite_index = spr_Player;
         }

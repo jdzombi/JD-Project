@@ -6,15 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_Player</sprite>
-    <sprite>sprites\spr_Player_Walk</sprite>
-    <sprite>sprites\spr_Player_Fall</sprite>
-    <sprite>sprites\spr_Player_Jump</sprite>
-    <sprite>sprites\spr_GrassTile</sprite>
-    <sprite>sprites\sp_DritTile</sprite>
-    <sprite>sprites\spr_Flower1</sprite>
-    <sprite>sprites\spr_Flower2</sprite>
-    <sprite>sprites\spr_Sign</sprite>
     <sprites name="Enemies">
       <sprite>sprites\spr_SlimeGround</sprite>
       <sprite>sprites\spr_Slime</sprite>
@@ -26,9 +17,21 @@
     <sprites name="Icons">
       <sprite>sprites\spr_Key_U</sprite>
       <sprite>sprites\spr_textbox</sprite>
+      <sprite>sprites\spr_HP</sprite>
     </sprites>
-    <sprite>sprites\spr_Light</sprite>
-    <sprite>sprites\spr_HP</sprite>
+    <sprites name="Player">
+      <sprite>sprites\spr_Player</sprite>
+      <sprite>sprites\spr_Player_Walk</sprite>
+      <sprite>sprites\spr_Player_Fall</sprite>
+      <sprite>sprites\spr_Player_Jump</sprite>
+    </sprites>
+    <sprites name="Environment">
+      <sprite>sprites\spr_GrassTile</sprite>
+      <sprite>sprites\sp_DritTile</sprite>
+      <sprite>sprites\spr_Flower1</sprite>
+      <sprite>sprites\spr_Flower2</sprite>
+      <sprite>sprites\spr_Sign</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -40,17 +43,23 @@
     <font>fonts\fnt</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_GrassTile</object>
-    <object>objects\obj_DirtTile</object>
     <object>objects\obj_Player</object>
-    <object>objects\obj_Slime</object>
-    <object>objects\obj_Sign</object>
-    <object>objects\obj_u_key</object>
-    <object>objects\obj_text</object>
-    <object>objects\obj_Rose</object>
-    <object>objects\obj_Flower1</object>
-    <object>objects\obj_Flower2</object>
-    <object>objects\obj_HP</object>
+    <objects name="Enemies">
+      <object>objects\obj_Rose</object>
+      <object>objects\obj_Slime</object>
+    </objects>
+    <objects name="Environment">
+      <object>objects\obj_GrassTile</object>
+      <object>objects\obj_DirtTile</object>
+      <object>objects\obj_Flower1</object>
+      <object>objects\obj_Flower2</object>
+      <object>objects\obj_Sign</object>
+    </objects>
+    <objects name="Icons">
+      <object>objects\obj_u_key</object>
+      <object>objects\obj_text</object>
+      <object>objects\obj_HP</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

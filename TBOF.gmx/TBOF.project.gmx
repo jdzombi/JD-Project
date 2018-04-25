@@ -24,6 +24,8 @@
       <sprite>sprites\spr_Player_Walk</sprite>
       <sprite>sprites\spr_Player_Fall</sprite>
       <sprite>sprites\spr_Player_Jump</sprite>
+      <sprite>sprites\spr_Player_Attack</sprite>
+      <sprite>sprites\spr_Sword_Attack</sprite>
     </sprites>
     <sprites name="Environment">
       <sprite>sprites\spr_GrassTile</sprite>

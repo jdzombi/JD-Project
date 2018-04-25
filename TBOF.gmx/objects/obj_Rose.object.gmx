@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>dir = -1;
 movespeed = 2;
+HP = 4;
 grav = 1.0;
 hsp = 1;
 vsp = 0;
@@ -54,7 +55,7 @@ player = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.freeze != 0 {
+            <string>if (global.freeze != 1) {
 if (abs(distance_to_object(obj_Player)) &lt; 800) {
     hsp = dir * movespeed;
     if (vsp &lt; 10) vsp += grav;

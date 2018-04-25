@@ -45,7 +45,6 @@
     <font>fonts\fnt</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_Player</object>
     <objects name="Enemies">
       <object>objects\obj_Rose</object>
       <object>objects\obj_Slime</object>
@@ -61,6 +60,10 @@
       <object>objects\obj_u_key</object>
       <object>objects\obj_text</object>
       <object>objects\obj_HP</object>
+    </objects>
+    <objects name="Player">
+      <object>objects\obj_Player</object>
+      <object>objects\obj_Sword</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -54,7 +54,8 @@ player = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (abs(distance_to_object(obj_Player)) &lt; 800) {
+            <string>if global.freeze != 0 {
+if (abs(distance_to_object(obj_Player)) &lt; 800) {
     hsp = dir * movespeed;
     if (vsp &lt; 10) vsp += grav;
     image_xscale = -sign(dir);
@@ -65,6 +66,7 @@ player = 0;
     else {
         player = -1;
     }
+}
 }
 </string>
           </argument>

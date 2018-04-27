@@ -143,18 +143,19 @@ if (no_hit = 1) {
     key_jump = keyboard_check_pressed(vk_space);
     key_jump_held = keyboard_check(vk_space);
     key_shift = keyboard_check(vk_shift);
-    key_attack = keyboard_check_pressed(ord("E"));
+    key_attack = keyboard_check_pressed(ord("I"));
 
     //React to Input
     move = key_left + key_right;
     if (alarm[2]&lt;0) {
         if (move != 0) {
             if (movespeed &lt; 5){
-            movespeed += acc;
+            movespeed += (acc/.1);
             }
             hsp = move * movespeed;
         }
         else {
+            movespeed = 0;
             hsp *= 0.9;
             if (abs(hsp)&lt;1) {
             hsp = 0
@@ -166,7 +167,7 @@ if (no_hit = 1) {
         }
      
         if (move = 0) {
-            movespeed = 5;
+           
             image_speed = 1;
         }
         if ((key_shift = 0) &amp;&amp; (movespeed &gt; 5)) {

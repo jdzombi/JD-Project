@@ -79,7 +79,7 @@ closed = 1;
         scr_text("The Quick Brown Fox Jumped Over The Lazy Dog The Quick Brown Fox Jumped Over The Lazy Dog",0.5,view_xview,y+44) 
         alarm[0] = 30;
     }
-    if (keyboard_check_pressed(ord("U")))&amp;&amp; (txtbx = 1) {
+    if (keyboard_check_pressed(ord("U"))) &amp;&amp; (txtbx = 1) {
         instance_deactivate_object(obj_text);
         global.freeze = 0;
         txtbx = 0;

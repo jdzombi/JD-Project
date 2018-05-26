@@ -38,9 +38,7 @@ time_count = irandom(29);
 max_timer = irandom_range(60, 180);
 
 image_blend = make_colour_hsv(irandom(255), irandom(255), irandom(255));
-
 sprite_index = spr_SlimeGround;
-
 image_speed = 0.1;
 </string>
           </argument>
@@ -67,7 +65,9 @@ image_speed = 0.1;
             <string>//Movement
 if (global.freeze != 1) {
     hsp = dir * movespeed;
-    if (vsp &lt; 10) vsp += grav;
+    if (vsp &lt; 10) { 
+        vsp += grav;
+    }
     if ((time_count == 20) &amp;&amp; (jumped = 1)) {
         movespeed = 0;
         if (hsp = 0) {
@@ -78,8 +78,7 @@ if (global.freeze != 1) {
     if (time_count &gt;= (max_timer-15)) {
         if ((obj_Player.x) &gt; (x)) {
             dir = 1;
-        }
-        else {
+        } else {
             dir = -1;
         }
     }
@@ -92,8 +91,7 @@ if (global.freeze != 1) {
             movespeed = 2;
             time_count = 0;
             jumped = 1;
-        }
-        else {
+        } else {
             time_count++;
         }
     }
@@ -102,7 +100,11 @@ if (global.freeze != 1) {
     
     //Animate
     if (!place_meeting(x,y+1,obj_GrassTile)) {
-        if (vsp &lt; 0) sprite_index = spr_SlimeJump else sprite_index = spr_SlimeFall;
+        if (vsp &lt; 0) {
+            sprite_index = spr_SlimeJump;
+        } else {
+            sprite_index = spr_SlimeFall;
+        }
     }
     image_xscale = dir;
  
@@ -110,10 +112,10 @@ if (global.freeze != 1) {
         sprite_index= spr_SlimeGround;
     }
 }
+
 if ((obj_Player.x) &gt; (x)) {
     player = 1;
-}
-else {
+} else {
     player = -1;
 }
 </string>

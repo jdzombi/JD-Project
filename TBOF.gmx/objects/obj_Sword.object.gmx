@@ -49,19 +49,19 @@
           <argument>
             <kind>1</kind>
             <string>if (place_meeting(x,y+1,obj_Slime)) {
-                    hit = instance_place(x,y,obj_Slime);
-                    hit.hsp = -(hit.player * ((hit.hsp + hsp)+10));
-                    hit.hsp *= 0.9;
-                    hit.vsp = -1;
-                    hit.HP -= hit.HP
-            }
-            if (place_meeting(x,y+1,obj_Rose)) {
-                    hit = instance_place(x,y,obj_Rose);
-                    hit.hsp = -(hit.player * ((hit.hsp + hsp)+10));
-                    hit.hsp *= 0.9;
-                    hit.vsp = -1;
-                    hit.HP -= hit.HP
-            }
+    hit = instance_place(x,y,obj_Slime);
+    hit.hsp = -(hit.player * ((hit.hsp + hsp)+10));
+    hit.hsp *= 0.9;
+    hit.vsp = -1;
+    hit.HP -= hit.HP
+}
+if (place_meeting(x,y+1,obj_Rose)) {
+    hit = instance_place(x,y,obj_Rose);
+    hit.hsp = -(hit.player * ((hit.hsp + hsp)+10));
+    hit.hsp *= 0.9;
+    hit.vsp = -1;
+    hit.HP -= hit.HP
+}
 </string>
           </argument>
         </arguments>

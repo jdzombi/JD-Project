@@ -76,7 +76,11 @@ depth = depth - instance_number(obj_text);
           <argument>
             <kind>1</kind>
             <string>draw_set_alpha(alpha);
-if (alpha &lt; 1) alpha += spd/10; else alpha = 1;
+if (alpha &lt; 1) {
+    alpha += spd/10;
+} else {
+    alpha = 1;
+}
 
 draw_set_font(font);
 draw_sprite(spr_textbox,0,view_xview,y);

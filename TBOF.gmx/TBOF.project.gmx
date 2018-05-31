@@ -25,6 +25,7 @@
       <sprite>sprites\spr_Player_Fall</sprite>
       <sprite>sprites\spr_Player_Jump</sprite>
       <sprite>sprites\spr_Player_Attack</sprite>
+      <sprite>sprites\spy_Player_Attacking</sprite>
       <sprite>sprites\spr_Sword_Attack</sprite>
     </sprites>
     <sprites name="Environment">

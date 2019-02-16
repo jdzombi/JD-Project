@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>HP = 4;
+hsp = 0;
+vsp = 0;
 </string>
           </argument>
         </arguments>
@@ -49,8 +51,12 @@
           <argument>
             <kind>1</kind>
             <string>if (global.freeze = 0) {
-    x = obj_Player.x - 80;
+    x = obj_Player.x - 16;
     y = obj_Player.y - 60;
+    hsp = obj_Player.hsp;
+    vsp = obj_Player.vsp;
+    y += vsp;
+    x += hsp;
     if (HP = 0) {
         global.freeze = 1;
     }
